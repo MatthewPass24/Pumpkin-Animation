@@ -11,7 +11,7 @@ body {
 
 .container {
     display: flex;
-    justify-content: cetner;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -107,7 +107,7 @@ body {
 
 .pumpkin .teeth {
     border-left: 0.8em solid #401b03;
-    border-bottom: 0 solid transparent;
+    border-bottom: 0em solid transparent;
     border-top: 0.8em solid transparent;
     width: 0.5em;
     height: 1em;
@@ -117,7 +117,54 @@ body {
 }
 
 .pumpkin .teeth::before,
-.punpkin .teeth::after {
+.pumpkin .teeth::after {
     content: '';
     display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 0.8em solid transparent;
+}
+
+.pumpkin .teeth::before {
+    right: 2.2em;
+    top: -0.65em;
+    transform: rotate(30deg);
+    border-bottom: 0.5em solid transparent;
+    border-left: 1em solid #401b03;
+}
+
+.pumpkin .teeth::after {
+    left: 1em;
+    top: -0.65em;
+    transform: rotate(30deg);
+    border-bottom: 0.5em solid transparent;
+    border-left: 1em solid #401b03;
+}
+
+.shadow {
+    margin: 10% auto 0;
+    background: #000;
+    width: 230px;
+    height: 50px;
+    border-radius: 50%;
+    animation: zoom 3s infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10%);
+    }
+}
+
+@keyframes zoom {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
 }
